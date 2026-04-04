@@ -35,89 +35,73 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
       font-weight: 700;
       letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 1.25rem;
+      line-height: 1.2;
+      margin-bottom: 3rem;
       color: #fff;
     }
 
-    .tagline {
-      font-size: 1.1rem;
-      color: #888;
-      line-height: 1.6;
-      margin-bottom: 3rem;
-    }
-
     .apps {
-      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
     }
 
     .app-card {
-      display: inline-block;
       background: #1a1a1a;
       border: 1px solid #2a2a2a;
       border-radius: 12px;
-      padding: 1.25rem 2rem;
-      text-decoration: none;
-      color: #e8e8e8;
-      transition: border-color 0.2s, background 0.2s;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    .app-card:hover {
-      border-color: #444;
-      background: #212121;
-    }
+    .app-info { flex: 1; }
 
     .app-name {
-      font-size: 1.25rem;
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
+      color: #e8e8e8;
     }
 
     .app-desc {
-      font-size: 0.875rem;
-      color: #666;
-    }
-
-    nav {
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       color: #555;
     }
 
-    nav a {
-      color: #666;
+    .app-links a {
+      font-size: 0.8rem;
+      color: #555;
       text-decoration: none;
-      margin: 0 0.75rem;
+      white-space: nowrap;
       transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: #aaa;
-    }
+    .app-links a:hover { color: #aaa; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="wordmark">Thirty3rdStudio</div>
 
-    <h1>Daily Growth Challenge</h1>
-
-    <p class="tagline">
-      Simple, focused apps made with care.
-    </p>
+    <h1>Simple, focused apps<br>made with care.</h1>
 
     <div class="apps">
-      <a class="app-card" href="#">
+      <div class="app-card">
         <div class="app-name">Daily Growth Challenge</div>
         <div class="app-desc">Available on the App Store</div>
-      </a>
+        <div class="app-links">
+          <a href="dagroch/privacy-policy.html">Privacy Policy</a>
+        </div>
+      </div>
     </div>
-
-    <nav>
-      <a href="privacy-policy.html">Privacy Policy</a>
-    </nav>
   </div>
 </body>
 </html>
