@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thirty3rdStudio</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .wordmark {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      color: #fff;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+
+    .apps {
+      margin-bottom: 3.5rem;
+    }
+
+    .app-card {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 1.25rem 2rem;
+      text-decoration: none;
+      color: #e8e8e8;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .app-card:hover {
+      border-color: #444;
+      background: #212121;
+    }
+
+    .app-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .app-desc {
+      font-size: 0.875rem;
+      color: #666;
+    }
+
+    nav {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    nav a {
+      color: #666;
+      text-decoration: none;
+      margin: 0 0.75rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="wordmark">Thirty3rdStudio</div>
+
+    <h1>dagroch</h1>
+
+    <p class="tagline">
+      Simple, focused apps made with care.
+    </p>
+
+    <div class="apps">
+      <a class="app-card" href="#">
+        <div class="app-name">dagroch</div>
+        <div class="app-desc">Available on the App Store</div>
+      </a>
+    </div>
+
+    <nav>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</body>
+</html>
