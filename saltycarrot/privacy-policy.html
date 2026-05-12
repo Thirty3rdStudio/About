@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — The Salty Carrot</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 2rem 0 3rem;
+      border-bottom: 1px solid #1e1e1e;
+      margin-bottom: 3rem;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .back:hover { color: #aaa; }
+
+    .back::before {
+      content: "←";
+      font-size: 1rem;
+    }
+
+    .wordmark {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    section {
+      margin-bottom: 2.75rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    p {
+      color: #aaa;
+      margin-bottom: 0.85rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0.85rem;
+    }
+
+    ul li {
+      color: #aaa;
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #444;
+    }
+
+    a {
+      color: #7a9cdb;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #1e1e1e;
+      font-size: 0.8rem;
+      color: #444;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="back" href="../index.html">Thirty3rdStudio</a>
+      <div class="wordmark">The Salty Carrot</div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective date: May 12, 2026 &nbsp;·&nbsp; Last updated: May 12, 2026</p>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Thirty3rdStudio ("we", "us", or "our") built The Salty Carrot as a personal recipe and
+        meal-planning iOS application. This page describes our privacy practices.
+      </p>
+      <p>
+        The short version: your recipes, meal plans, pantry, and shopping data live on your device
+        and in your personal iCloud account — not our servers. When you use AI features, the
+        relevant content is sent to a third-party AI service on your behalf. We do not log or
+        retain that content.
+      </p>
+    </section>
+
+    <section>
+      <h2>Your Data</h2>
+      <p>
+        Recipes, ingredients, tags, meal-plan slots, pantry items, shopping-list entries, and
+        chat history are stored locally on your device using Apple's SwiftData framework. If you
+        have iCloud enabled, this data syncs to your personal iCloud account via Apple CloudKit.
+        We never have access to your iCloud account or its contents.
+      </p>
+      <p>
+        Settings you enter — your display name and free-text taste preferences (likes / dislikes) —
+        are stored locally on your device only. They are included in AI requests as described
+        below to tailor suggestions, but are not otherwise transmitted.
+      </p>
+      <p>
+        Deleting the app from your device removes all local data permanently. iCloud data is
+        governed by your own iCloud account settings.
+      </p>
+    </section>
+
+    <section>
+      <h2>AI Features</h2>
+      <p>
+        The Salty Carrot uses AI for several features: the "Ask the Carrot" chat assistant,
+        recipe extraction from a URL, photo, or PDF, fridge photo scanning that proposes pantry
+        items, nutrition estimation for saved recipes, and pantry-based recipe inspiration. When
+        you trigger any of these, the app constructs a request that may include:
+      </p>
+      <ul>
+        <li>Recipe titles, ingredients, tags, and instructions you have saved</li>
+        <li>Pantry items and open shopping-list items, to inform suggestions</li>
+        <li>Meal-plan slots from the current and prior week, for chat context</li>
+        <li>Your free-text taste preferences (likes / dislikes) and display name from Settings</li>
+        <li>Photos you have taken or selected (for fridge scan, photo recipe import, and image-based chat messages)</li>
+        <li>The text content of a recipe URL or PDF you have shared with the app</li>
+        <li>Your conversation history within the current chat session</li>
+      </ul>
+      <p>
+        This request is sent over HTTPS to our Firebase Cloud Functions proxy. The proxy verifies
+        the request comes from a genuine Salty Carrot installation using Firebase App Check, then
+        forwards it to <strong>OpenRouter</strong>, a third-party AI routing service. Our proxy
+        does not log or store the content of your requests.
+      </p>
+      <p>
+        OpenRouter's privacy policy governs how they handle data sent through their service. AI
+        features are entirely opt-in — no data is transmitted unless you initiate a chat message,
+        scan, import, or inspiration request.
+      </p>
+      <p>
+        The chat assistant can propose structured actions (e.g. saving a recipe, planning a meal,
+        adding items to your shopping list). These proposals appear as cards in the chat and only
+        change your local data when you tap Apply. Nothing is applied automatically.
+      </p>
+    </section>
+
+    <section>
+      <h2>Photos and Camera</h2>
+      <p>
+        Recipe photos and PDFs you import are stored locally on your device as part of your recipe
+        data and are included in iCloud backups if iCloud is enabled. Photos are not transmitted
+        to any server unless you explicitly use them in an AI feature (fridge scan, photo recipe
+        import, or a chat message with an attached image), in which case they follow the same
+        path described under AI Features above.
+      </p>
+    </section>
+
+    <section>
+      <h2>Crash Logs and Diagnostics</h2>
+      <p>
+        The Salty Carrot writes startup and runtime logs to files within your device's app sandbox.
+        These files are accessible to you via the Files app but are not automatically uploaded
+        anywhere. We do not use any crash-reporting or analytics SDK.
+      </p>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <ul>
+        <li>
+          <strong>Apple App Store</strong> — distribution platform.
+          Apple may collect download and purchase records per
+          <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>Apple iCloud / CloudKit</strong> — recipe, plan, pantry, shopping, and chat data
+          syncs to your personal iCloud account.
+          See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>Firebase (Google)</strong> — App Check token validation only. We do not use
+          Firebase Analytics, Crashlytics, or any other Firebase data collection product.
+          See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>OpenRouter</strong> — AI routing for all AI features.
+          See <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer">OpenRouter Privacy Policy</a>.
+        </li>
+      </ul>
+      <p>We do not integrate any advertising SDKs, analytics platforms, or social media trackers.</p>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>
+        The Salty Carrot is intended for users aged 16 and older. We do not knowingly allow
+        anyone under 16 to use the app, and we do not collect personal information from anyone,
+        regardless of age.
+      </p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>
+        If we ever change our privacy practices, we will update this page and revise the
+        effective date above.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Questions? Reach us at:<br>
+        <strong>Thirty3rdStudio</strong> —
+        <a href="mailto:apps@thirty3rdstudio.com">apps@thirty3rdstudio.com</a>
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2026 Thirty3rdStudio. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
