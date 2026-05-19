@@ -128,7 +128,7 @@
       <a class="back" href="../index.html">Thirty3rdStudio</a>
       <div class="wordmark">The Salty Carrot</div>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective date: May 12, 2026 &nbsp;·&nbsp; Last updated: May 12, 2026</p>
+      <p class="meta">Effective date: May 19, 2026 &nbsp;·&nbsp; Last updated: May 19, 2026</p>
     </header>
 
     <section>
@@ -139,9 +139,10 @@
       </p>
       <p>
         The short version: your recipes, meal plans, pantry, and shopping data live on your device
-        and in your personal iCloud account — not our servers. When you use AI features, the
-        relevant content is sent to a third-party AI service on your behalf. We do not log or
-        retain that content.
+        and in your personal iCloud account — not our servers. The optional features — AI
+        assistance, weather, voice input, recipe sharing, and pantry sharing — each act only when
+        you initiate them and can be turned off or revoked at any time. We do not log or retain
+        your content.
       </p>
     </section>
 
@@ -156,7 +157,18 @@
       <p>
         Settings you enter — your display name and free-text taste preferences (likes / dislikes) —
         are stored locally on your device only. They are included in AI requests as described
-        below to tailor suggestions, but are not otherwise transmitted.      </p>
+        below to tailor suggestions, but are not otherwise transmitted.
+      </p>
+      <p>
+        If you opt in to weather features, an approximate location (latitude, longitude, and a
+        locality name) is stored locally on your device only — it is not synced to iCloud or sent
+        to us. See "Location and Weather" below.
+      </p>
+      <p>
+        Pantry contents are private to you by default. If you choose to share your pantry with
+        another iCloud user (see "Pantry Sharing" below), the shared items become visible to that
+        user via Apple CloudKit while the share is active.
+      </p>
       <p>
         Deleting the app from your device removes all local data permanently. iCloud data is
         governed by your own iCloud account settings.
@@ -205,6 +217,81 @@
     </section>
 
     <section>
+      <h2>Pantry Sharing</h2>
+      <p>
+        Pantry sharing is an opt-in feature. You can invite another iCloud user to share your
+        pantry from <em>Settings → Pantry → Share Pantry…</em>. Apple's CloudKit Sharing handles
+        the invite, acceptance, and access control; the recipient must explicitly accept before
+        seeing anything.
+      </p>
+      <p>
+        While a share is active, the invited participant can view and edit the shared pantry items
+        through Apple's iCloud infrastructure. No pantry data passes through our servers. As the
+        owner, you can stop sharing or change participants at any time via the gear icon on the
+        same Settings row, which opens Apple's standard share-management sheet. A participant can
+        leave the share at any time from their own device; on leaving, their copy of the shared
+        items is preserved in their personal pantry.
+      </p>
+    </section>
+
+    <section>
+      <h2>Recipe Sharing</h2>
+      <p>
+        Sharing a single recipe with a friend (the share icon on a recipe page) is opt-in and acts
+        only when you tap it. The app encodes the recipe's title, ingredients, instructions,
+        system tags, servings, and times into the share <em>link itself</em> and hands the link to
+        the iOS share sheet — you choose where it goes (Messages, Mail, Notes, etc.). The recipe
+        photo is not included in the link; recipients see a generic Salty Carrot preview image.
+      </p>
+      <p>
+        When the recipient (or the link-preview agent inside Messages/Mail) opens the link, our
+        Firebase-hosted page decodes the embedded data on the fly and renders a preview. The
+        recipe is <em>not</em> stored on any server — it lives entirely inside the URL. That also
+        means anyone who has the URL can see the recipe contents, so share it with people you
+        trust as you would any other link.
+      </p>
+      <p>
+        Firebase Hosting may record standard access logs (request URL, IP address, timestamp) per
+        Firebase's own privacy practices; we do not run analytics on these logs or correlate them
+        to identifiable users.
+      </p>
+    </section>
+
+    <section>
+      <h2>Location and Weather</h2>
+      <p>
+        Weather context on the Home tab is optional. It is only enabled if you tap <em>Use my
+        location</em> in Settings; if you never tap it, the app does not access your location or
+        contact a weather service.
+      </p>
+      <p>
+        When enabled, the app captures a single coarse location from iOS, stores latitude,
+        longitude, and the resolved locality name locally on your device only (not in iCloud, not
+        on our servers), and uses it to call Apple WeatherKit for the current conditions. You can
+        clear the stored location, capture a new one, or revoke the iOS Location permission
+        entirely at any time from iOS Settings → The Salty Carrot.
+      </p>
+    </section>
+
+    <section>
+      <h2>Microphone and Speech</h2>
+      <p>
+        The "Speak items" feature in the Pantry is opt-in and only active while you are using it.
+        The first time you tap the microphone, iOS asks you to grant microphone and speech-
+        recognition permissions; the app cannot record without both.
+      </p>
+      <p>
+        Audio is captured only during the active recording and transcribed using Apple's Speech
+        framework (which Apple may process on-device or via Apple's servers depending on the
+        language and device). The app does not retain the raw audio. The resulting text is then
+        treated like any other pantry input: items you confirm get saved locally; AI-assisted
+        cleanup, if triggered, follows the same path as other AI features described above. You can
+        revoke microphone or speech-recognition permission at any time from iOS Settings → The
+        Salty Carrot.
+      </p>
+    </section>
+
+    <section>
       <h2>Crash Logs and Diagnostics</h2>
       <p>
         The Salty Carrot writes startup and runtime logs to files within your device's app sandbox.
@@ -223,12 +310,27 @@
         </li>
         <li>
           <strong>Apple iCloud / CloudKit</strong> — recipe, plan, pantry, shopping, and chat data
-          syncs to your personal iCloud account.
+          syncs to your personal iCloud account. CloudKit Sharing also powers the optional pantry
+          sharing feature.
           See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
         </li>
         <li>
-          <strong>Firebase (Google)</strong> — App Check token validation only. We do not use
-          Firebase Analytics, Crashlytics, or any other Firebase data collection product.
+          <strong>Apple WeatherKit</strong> — optional. Only contacted when you have enabled
+          weather via <em>Use my location</em>.
+          See <a href="https://www.apple.com/legal/privacy/data/en/weather/" target="_blank" rel="noopener noreferrer">Apple Weather Privacy</a>.
+        </li>
+        <li>
+          <strong>Apple Speech framework</strong> — optional. Only used while you are actively
+          recording with the "Speak items" feature; may transcribe on-device or via Apple's servers
+          depending on the language.
+          See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>Firebase (Google)</strong> — three roles, no analytics: App Check validates that
+          AI requests come from a genuine app installation; Cloud Functions proxies AI requests to
+          OpenRouter without logging content; Firebase Hosting renders the preview page for
+          recipe share links. We do not use Firebase Analytics, Crashlytics, or any other Firebase
+          data-collection product.
           See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a>.
         </li>
         <li>
