@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — SJ Whales</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 2rem 0 3rem;
+      border-bottom: 1px solid #1e1e1e;
+      margin-bottom: 3rem;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .back:hover { color: #aaa; }
+
+    .back::before {
+      content: "←";
+      font-size: 1rem;
+    }
+
+    .wordmark {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    section {
+      margin-bottom: 2.75rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    p {
+      color: #aaa;
+      margin-bottom: 0.85rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0.85rem;
+    }
+
+    ul li {
+      color: #aaa;
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #444;
+    }
+
+    a {
+      color: #7a9cdb;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #1e1e1e;
+      font-size: 0.8rem;
+      color: #444;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="back" href="../index.html">Thirty3rdStudio</a>
+      <div class="wordmark">SJ Whales</div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective date: May 23, 2026 &nbsp;·&nbsp; Last updated: May 23, 2026</p>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Thirty3rdStudio ("we", "us", or "our") built SJ Whales as a mobile app that shows a live map of
+        whale-watching activity around San Juan Island, derived from publicly broadcast AIS vessel
+        positions. This page describes our privacy practices.
+      </p>
+      <p>
+        The short version: we do not ask for a name, email, account, or any personal identifier. The app
+        uses an anonymous Firebase identity tied only to your installation, and we do not collect
+        analytics, advertising data, or crash reports. The map content comes from public maritime AIS
+        broadcasts — not from you.
+      </p>
+    </section>
+
+    <section>
+      <h2>Anonymous Identity</h2>
+      <p>
+        SJ Whales is invitation-only. On first launch, the app signs in anonymously with Firebase
+        Authentication. This creates a random, opaque identifier (a "UID") for your install that we
+        use solely to enforce the invitation gate and route push notifications to your device. The UID
+        is not linked to your Apple ID, Google account, email address, phone number, or any other
+        personal identifier.
+      </p>
+      <p>
+        When you redeem an invitation code, the UID is recorded against that code in our Firestore
+        database so the host who issued the code can revoke or rotate it. No human-readable information
+        is attached to the UID.
+      </p>
+    </section>
+
+    <section>
+      <h2>Location</h2>
+      <p>
+        If you grant location permission ("While Using the App"), SJ Whales shows your current position
+        as a dot on the map so you can see where boats are relative to you. Your location is used only
+        on your device for that rendering — it is not transmitted to our servers and is not associated
+        with your UID.
+      </p>
+      <p>
+        Location permission is optional. The app works without it; the map simply does not show your
+        position.
+      </p>
+    </section>
+
+    <section>
+      <h2>Whale Sightings (Observations)</h2>
+      <p>
+        If you choose to report a whale sighting through the app, the following are transmitted to our
+        backend and stored in our Firestore database so other invited users can see the sighting on
+        the live map:
+      </p>
+      <ul>
+        <li>The pin coordinate you placed for the whales</li>
+        <li>The coordinate where you were standing when you submitted (for uncertainty calculation)</li>
+        <li>An optional short text note that you chose to add</li>
+        <li>The server-supplied submission timestamp</li>
+      </ul>
+      <p>
+        Submissions are tied to your install's UID and are visible to every invited user. They are not
+        attributed to a real name or contact information — only the UID — and remain on the live map
+        for a few hours before fading. Reporting a sighting is entirely opt-in; nothing is sent unless
+        you tap the submit button.
+      </p>
+    </section>
+
+    <section>
+      <h2>Push Notifications</h2>
+      <p>
+        If you allow push notifications, your device's FCM token (an opaque string issued by Firebase
+        Cloud Messaging) is sent to our backend so we can deliver "whales spotted" alerts when a new
+        cluster forms inside one of the detection zones you have enabled in Settings. We send only the
+        cluster's metadata in the notification — never your identity, location, or any personal
+        information. You can change zone subscriptions at any time, or disable notifications entirely
+        from iOS / Android system settings.
+      </p>
+    </section>
+
+    <section>
+      <h2>Crash Logs and Diagnostics</h2>
+      <p>
+        SJ Whales writes startup and diagnostic logs to files within your device's app sandbox. These
+        files are accessible to you via the Files app (iOS) or the app's internal storage (Android) but
+        are not automatically uploaded anywhere. We do not use any crash-reporting or analytics SDK.
+      </p>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <ul>
+        <li>
+          <strong>Apple App Store / Google Play</strong> — distribution platforms. Each may collect
+          download and purchase records per
+          <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>
+          and
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>Firebase (Google)</strong> — Anonymous Authentication, Cloud Firestore (storing
+          invitation-code records, vessel positions, detection clusters, and whale-sighting reports),
+          Cloud Functions (backend logic), Cloud Messaging (push notifications), App Check (anti-abuse
+          token validation), and Hosting (invitation landing page). See the
+          <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>Apple Maps</strong> (iOS) and
+          <strong>Google Maps</strong> (Android) — rendering the live map.
+          See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>
+          and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>AISStream.io</strong> — public AIS data ingested by our backend only (not from your
+          device). See
+          <a href="https://aisstream.io/privacy" target="_blank" rel="noopener noreferrer">AISStream's privacy notice</a>.
+        </li>
+      </ul>
+      <p>We do not integrate any advertising SDKs, analytics platforms, or social media trackers.</p>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>
+        SJ Whales is intended for users aged 18 and older. We do not knowingly allow anyone under 18
+        to use the app, and we do not collect personal information from anyone, regardless of age.
+      </p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>
+        If we ever change our privacy practices, we will update this page and revise the
+        effective date above.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Questions? Reach us at:<br>
+        <strong>Thirty3rdStudio</strong> —
+        <a href="mailto:apps@thirty3rdstudio.com">apps@thirty3rdstudio.com</a>
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2026 Thirty3rdStudio. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
